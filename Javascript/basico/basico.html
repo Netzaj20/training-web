@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>basicos de html, css y javascript</title>
+
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            .container{
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            .row{
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                flex-wrap: nowrap;
+            }
+
+            .col-50,
+            .col-100{
+                padding: 0 15px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .text-center{
+                text-align: center;
+            }
+
+            @media (min-width: 768px) {
+                .row{
+                   flex-direction: row;
+                   flex-wrap: wrap;
+                }
+
+                .col-50{
+                padding: 0 15px;
+                width: 50%;
+                box-sizing: border-box;
+                }
+            }
+        
+        </style>
+
+        <script>
+            function addfruit () {
+                let fruitinput = document.getElementById('fruitinput');
+                let li = document.createElement('li');
+
+                li.innerText = fruitinput.value;
+
+                let fruitlist = document.getElementById('fruitlist');
+                fruitlist.appendChild(li);
+                fruitinput.value = '';
+            }
+
+            function removeFruit () {
+                let fruitlist = document.getElementById('fruitlist');
+                fruitlist.innerHTML = '';
+            }
+
+            function addveggie () {
+                let veggieinput = document.getElementById('veggieinput');
+                let li = document.createElement('li');
+
+                li.innerText = veggieinput.value;
+
+                let veggielist = document.getElementById('veggielist');
+                veggielist.appendChild(li);
+                veggieinput.value = '';
+            }
+
+            function removeVeggie () {
+                let veggielist = document.getElementById('veggielist');
+                veggielist.innerHTML = '';
+            }
+
+            function addStudent () {
+                let studentinput = document.getElementById('studentinput');
+                let li = document.createElement('li');
+
+                li.innerText = studentinput.value;
+
+                let studentlist = document.getElementById('studentlist');
+                studentlist.appendChild(li);
+                studentinput.value = '';
+            }
+
+            function removeStudent () {
+                let veggielist = document.getElementById('studentlist');
+                studentlist.innerHTML = '';
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+           <div class="row">
+           <div class="col-100">
+            <h1 class="text-center">
+                practica basica de html, css y javascript
+            </h1>
+           </div>
+
+           <div class="col-50">
+            <h2 class="text-center">
+                Lista de frutas
+            </h2>
+            <form>
+               <fieldset>
+                <label for="fruitinput">
+                    Agrega una fruta
+                </label><br>
+                <input id="fruitinput" type="text">
+                <button onclick="addfruit();" type="button">
+                    +
+                </button>
+                <button onclick="removeFruit ();" type="button">
+                    Borrar
+                </button>
+               </fieldset>
+            </form>
+            <ul id="fruitlist">
+                <li>Mango</li>
+                <li>Kiwi</li>
+            </ul>
+           </div>
+
+           <div class="col-50">
+            <h2 class="text-center">
+                Lista de verduras
+            </h2>
+            <form>
+               <fieldset>
+                <label for="veggieinput">
+                    Agrega una verdura
+                </label><br>
+                <input id="veggieinput" type="text">
+                <button onclick="addveggie();" type="button">
+                    +
+                </button>
+                <button onclick="removeVeggie();" type="button">
+                    Borrar
+                </button>
+               </fieldset>
+            </form>
+            <ul id="veggielist">
+                <li>Tomate</li>
+                <li>Cebolla</li>
+            </ul>
+           </div>
+           <div class="col-50">
+            <h2 class="text-center">
+                Lista de Alumnos
+            </h2>
+            <form>
+               <fieldset>
+                <label for="studentinput">
+                    Agrega una Alumno
+                </label><br>
+                <input id="studentinput" type="text">
+                <button onclick="addStudent();" type="button">
+                    +
+                </button>
+                <button onclick="removeStudent();" type="button">
+                    Borrar
+                </button>
+               </fieldset>
+            </form>
+            <ul id="studentlist">
+                <li>Maria Jose Gonzales Lopes</li>
+                <li>Jose Maria lopes Gonzales</li>
+            </ul>
+           </div>
+           </div>
+        </div>
+     
+    </body>
+</html>
