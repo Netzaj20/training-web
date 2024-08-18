@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Ejercicios de Arrays
+        </title>
+        <style>
+            html{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html * {
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                line-height: 1.6;
+                padding: 0;
+                margin: 0;
+            }
+
+            .container{
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            .row{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                row-gap: 30px;
+            }
+
+            .col-50,
+            .col-100{
+                width: 100%;
+                padding: 0 15px;
+            }
+
+            .text-center{
+                text-align: center;
+            }
+
+            @media (min-width: 768px) {
+                .row{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+
+                .col-50{
+                    width: 50%;
+                }
+            }
+        </style>
+            
+        <script>
+            document.addEventListener('DOMContentLoaded', function (){
+                let colorlist = document.getElementById('colorlist');
+                let colorArray = ['Azul', 'Blanco' ,'Amarillo'];
+
+                for (
+                    let i = 0;
+                    i < colorArray.length;
+                    i++
+                ){
+                    let li = document.createElement('li');
+                    li.innerText = colorArray[i];
+                    colorlist.appendChild(li);
+                }
+            }, false);
+        </script>
+       
+       <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            iceCreamList = document.getElementById('iceCreamList');
+            let iceCreamArray = ['vainilla', 'Chocolate' ,'Napolitano'];
+
+            iceCreamArray.forEach(item =>{
+                let li = document.createElement('li');
+                li.innerText = item;
+                iceCreamList.appendChild(li);
+            });
+        }, false);
+        </script>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let classList = document.getElementById('classList');
+                let classArray = ['Lengua', 'Historia' ,'Ciencias'];
+
+                for (  let i = 0; i < classArray.length; i++                
+                ){
+                    let li = document.createElement('li');
+                    li.innerText = classArray[i];
+                    classList.appendChild(li);
+                }
+        }, false);
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-100">
+                    <h1 class="text-center">
+                        Ejercicios con Arrays y javascript
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-50">
+                    <h2 class="text-center">
+                        Lista de frutas
+                    </h2>
+                    <ul id="fruitList">
+
+                    </ul>
+                </div>
+                    <div class="col-50">
+                        <h2 class="text-center">
+                            Lista de verduras
+                        </h2>
+                        <ul id="veggielist">
+    
+                        </ul>
+                    </div>
+
+                    <div class="col-50">
+                        <h2 class="text-center">
+                            Lista de colores
+                        </h2>
+                        <ul id="colorlist">
+    
+                        </ul>
+                    </div>
+
+                    <div class="col-50">
+                        <h2 class="text-center">
+                            Lista de sabores de eskimos
+                        </h2>
+                        <ul id="iceCreamList">
+    
+                        </ul>
+                    </div>
+
+                    <div class="col-50">
+                        <h2 class="text-center">
+                            Lista de materias escolares
+                        </h2>
+                        <ul id="classList">
+    
+                        </ul>
+                    </div>
+        </div>
+        <script>
+            let fruitList = document.getElementById('fruitList');
+            let fruitArray = ['Mango' ,'Manzana' ,'Banano'];
+
+            for (let index = 0; index < fruitArray.length; index++){
+                let li = document.createElement('li')
+                li.innerText = fruitArray[index];
+                fruitList.appendChild(li);
+            }
+        </script>
+
+        <script>
+            let veggielist = document.getElementById('veggielist');
+            let veggieArray = ['Tomate' ,'Ajo' ,'Cebolla'];
+
+            for (let i =0; i< veggieArray.length; i++){
+                let li = document.createElement('li')
+                li.innerText = veggieArray[i];
+                veggielist.appendChild(li); 
+            }
+        </script>
+    </body>
+</html>
