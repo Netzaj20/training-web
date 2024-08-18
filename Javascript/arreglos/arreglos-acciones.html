@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>basicos de html, css y javascript</title>
+
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            .container{
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            .row{
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                flex-wrap: nowrap;
+            }
+
+            .col-50,
+            .col-100{
+                padding: 0 15px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .text-center{
+                text-align: center;
+            }
+
+            @media (min-width: 768px) {
+                .row{
+                   flex-direction: row;
+                   flex-wrap: wrap;
+                }
+
+                .col-50{
+                padding: 0 15px;
+                width: 50%;
+                box-sizing: border-box;
+                }
+            }
+        
+        </style>
+
+     <script>
+        let fruitArray=[];
+        function addFruit () {
+            let fruitinput = document.getElementById('fruitinput');
+            let fruit = fruitinput.value;
+
+            fruitArray.push(fruit);
+
+            let fruitList = document.getElementById('fruitList')
+            fruitList.innerHTML ='';
+
+            for( let i = 0; i < fruitArray.length; i++) {
+                let li = document.createElement('li');
+                li.innerText = fruitArray[i];
+                fruitList.prepend(li);
+            }
+
+            fruitinput.value = '';
+    }
+
+    function removeFruit(){
+        fruitList.innerHTML = '';
+        fruitArray = [];
+    }
+
+     </script>
+
+<script>
+    let veggieArray=[];
+    function addVeggie () {
+        let veggieInput = document.getElementById('veggieInput');
+        let veggie = veggieInput.value;
+
+        veggieArray.push(veggie);
+
+        let veggieList = document.getElementById('veggieList')
+        veggieList.innerHTML ='';
+
+        for( let i = 0; i < veggieArray.length; i++) {
+            let li = document.createElement('li');
+            li.innerText = veggieArray[i];
+            veggieList.prepend(li);
+        }
+
+        veggieInput.value = '';
+}
+
+function removeVeggie(){
+    veggieList.innerHTML = '';
+    veggieArray = [];
+}
+
+ </script>
+    </head>
+    <body>
+       <div class="container">
+          <div class="row">
+            <div class="col-100">
+                <h1 class="text-center">
+                    listas de acciones en javascript
+                </h1>
+            </div>
+          </div>
+
+        
+
+          <div class="row">
+            <div class="col-50">
+                <h2 class="text-center">
+                    lista de frutas
+                </h2>
+                <form>
+                    <fieldset>
+                     <label for="fruitinput">
+                         Agrega una fruta
+                     </label><br>
+                     <input id="fruitinput" type="text">
+                     <button onclick="addFruit();" type="button">
+                         +
+                     </button>
+                     <button onclick="removeFruit ();" type="button">
+                         Borrar
+                     </button>
+                    </fieldset>
+                 </form>
+                 <ul id="fruitList">
+                
+                 </ul>
+            </div>
+            
+            <div class="col-50">
+                <h2 class="text-center">
+                    lista de Verduras
+                </h2>
+                <form>
+                    <fieldset>
+                     <label for="veggieInput">
+                         Agrega una Verdura
+                     </label><br>
+                     <input id="veggieInput" type="text">
+                     <button onclick="addVeggie();" type="button">
+                         +
+                     </button>
+                     <button onclick="removeVeggie ();" type="button">
+                         Borrar
+                     </button>
+                    </fieldset>
+                 </form>
+                 <ul id="veggieList">
+                
+                 </ul>
+            </div>
+          </div>
+         </div>
+     
+    </body>
+</html>
